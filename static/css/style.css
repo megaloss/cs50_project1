@@ -1,0 +1,64 @@
+#top {
+background-image: url("/static/pic/background.jpg");
+background-color: #cccccc;
+height: 100px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+opacity: 0.8;
+
+}
+#title{
+text-align: center;
+font-size: 46px;
+font-weight: bold;
+color: Black;
+text-shadow: 2px 2px white;
+padding: 20px;
+}
+
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+ul{
+display: inline;
+}
+
+nav {
+float: left;
+width: 100%;
+/*height: 300px; /* only for demonstration, should be removed */
+background: #cccc;
+padding: 10px;
+}
+
+.container {
+  float: left;
+  padding: 20px;
+  width: 100%;
+  background-color: #f1f1f1;
+  height: 270px; /* only for demonstration, should be removed */
+}
+
+.by{
+font-style: italic;
+font-weight: lighter;
+text-align: left;
+}
+
+.ly{
+font-style: normal;
+font-weight: lighter;
+text-align: right;
+}
+
+h1 {
+color: #4583c2;
+}
+h2 {
+}

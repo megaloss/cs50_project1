@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Books
+{% endblock %}
+
+{% block body %}
+
+<h2>{{ message }}</h2>
+
+    <h1>Log in</h1>
+
+   <form action="{{ url_for('login_submit') }}" method="post">
+
+
+        <div class="form-group">
+            <input class="form-control" name="login" placeholder="enter login">
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" type="password" name="passw" placeholder="enter password">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary">Login</button>
+        </div>
+
+    </form>
+    <p style"allign:center;">
+    <a href="/signup">Make account</a>
+    </p>
+{% endblock %}
