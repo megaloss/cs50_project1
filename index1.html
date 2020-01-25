@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Books
+{% endblock %}
+
+{% block body %}
+    <h1>Search the book</h1>
+
+   <form action="{{ url_for('search', search=search, search_by=search_by )}}" method="get">
+     <div class="form-check  form-check-inline">
+      <input class="form-check-input" type="radio" name="search_by" value="name" checked>
+      <label class="form-check-label" for="exampleRadios1">
+        Name
+      </label>
+     </div>
+     <div class="form-check  form-check-inline">
+      <input class="form-check-input" type="radio" name="search_by" value="author">
+      <label class="form-check-label" for="exampleRadios2">
+        Author
+      </label>
+     </div>
+     <div class="form-check  form-check-inline">
+      <input class="form-check-input" type="radio" name="search_by" value="isbn" >
+      <label class="form-check-label" for="exampleRadios2">
+        IBSN
+      </label>
+      </div>
+      <div class="form-check  form-check-inline">
+       <input class="form-check-input" type="radio" name="search_by" value="year">
+       <label class="form-check-label" for="exampleRadios2">
+        Year
+       </label>
+      </div>
+
+        <div class="form-group">
+            <input class="form-control" name="search" placeholder="enter a book name">
+        </div>
+
+
+        <div class="form-group">
+            <button class="btn btn-primary">Search a book</button>
+        </div>
+
+    </form>
+
+
+{% endblock %}

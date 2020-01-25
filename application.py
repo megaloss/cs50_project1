@@ -83,8 +83,25 @@ def search():
     if session.get('user') is None:
         return render_template("login.html", message="You must be logged in to search")
     s=request.args.get('search')
+    s1=s
     s="%"+s+"%"
-    books = db.execute("SELECT * FROM books WHERE name ILIKE :s ORDER BY name",{"s":s}).fetchall()
+    search_by=request.args.get('search_by')
+    print (search_by)
+    print (s)
+    if search_by=='name':
+        books = db.execute("SELECT * FROM books WHERE name ILIKE :s ORDER BY name",{"s":s}).fetchall()
+    if search_by=='isbn':
+        books = db.execute("SELECT * FROM books WHERE isbn ILIKE :s ORDER BY name",{"s":s}).fetchall()
+    if search_by=='author':
+        books = db.execute("SELECT * FROM books WHERE author ILIKE :s ORDER BY name",{"s":s}).fetchall()
+    if search_by=='year':
+        try:
+            s=int(s1)
+        except ValueError:
+            return render_template("error.html", message="Invalid year.")
+        books = db.execute("SELECT * FROM books WHERE year=:s ORDER BY name",{"s":s}).fetchall()
+
+
     return render_template("books.html", books=books)
 
 @app.route("/review", methods=["POST"])
